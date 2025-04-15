@@ -13,6 +13,8 @@
   --color-primary-100: #dddfff;
   --color-primary-200: #cac5fe;
 
+  --color-primary-300: #edeff1;
+
   --color-light-100: #d6e0ff;
   --color-light-400: #6870a6;
   --color-light-600: #4f557d;
@@ -175,7 +177,7 @@
     @apply flex min-h-14 w-full items-center justify-center gap-1.5 rounded-md;
   }
   .btn-primary {
-    @apply w-fit !bg-primary-200 !text-dark-100 hover:!bg-primary-200/80 !rounded-full !font-bold px-5 cursor-pointer min-h-10;
+    @apply w-fit !bg-primary-300 !text-dark-100 hover:!bg-primary-300/80 !rounded-full !font-bold px-5 cursor-pointer min-h-10;
   }
   .btn-secondary {
     @apply w-fit !bg-dark-200 !text-primary-200 hover:!bg-dark-200/80 !rounded-full !font-bold px-5 cursor-pointer min-h-10;
@@ -266,7 +268,7 @@
   }
 
   .card-cta {
-    @apply flex flex-row blue-gradient-dark rounded-3xl px-16 py-6 items-center justify-between max-sm:px-4;
+    @apply flex flex-row grey-gradient-dark rounded-3xl px-16 py-6 items-center justify-between max-sm:px-4;
   }
 
   .interviews-section {
@@ -308,6 +310,9 @@
 
 @utility blue-gradient-dark {
   @apply bg-gradient-to-b from-[#171532] to-[#08090D];
+}
+@utility grey-gradient-dark {
+  @apply bg-gradient-to-b from-[#34495e] to-[#08090D];
 }
 
 @utility blue-gradient {
