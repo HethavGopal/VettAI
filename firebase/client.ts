@@ -7,12 +7,12 @@ import { getAnalytics } from "firebase/analytics";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCd47sgTVDcQex8GpbiKK2afTIhhzUbDM0",
-    authDomain: "vettai.firebaseapp.com",
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
     projectId: "vettai",
     storageBucket: "vettai.firebasestorage.app",
     messagingSenderId: "307131767277",
-    appId: "1:307131767277:web:82c2df8a1f2c4deeedefe4",
+    appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
     measurementId: "G-8WGL1DRDY3"
 };
 
