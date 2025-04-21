@@ -7,9 +7,9 @@ import { getAnalytics } from "firebase/analytics";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 const firebaseConfig = {
-    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+    apiKey: "AIzaSyCd47sgTVDcQex8GpbiKK2afTIhhzUbDM0",
     authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-    projectId: "vettai",
+    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
     storageBucket: "vettai.firebasestorage.app",
     messagingSenderId: "307131767277",
     appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
