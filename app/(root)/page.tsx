@@ -16,9 +16,7 @@ const Page = async () => {
 
     const hasPastInterviews = userInterviews?.length > 0;
     const hasUpcomingInterviews = latestInterviews?.length > 0;
-    console.log("User:", user);
-    console.log("User Interviews:", userInterviews);
-    console.log("Latest Interviews:", latestInterviews);
+
 
 
 
@@ -26,9 +24,9 @@ const Page = async () => {
         <>
             <section className="card-cta">
                 <div className="flex flex-col gap-6 max-w-lg">
-                    <h2>Get Interview-Ready with AI-Powered Practice & Feedback</h2>
+                    <h2>Master Interviews with AI-Powered Mock Sessions & Real-Time Feedback</h2>
                     <p className="text-lg">
-                        Practice on real interview questions & get instant feedback
+                        Practice Real Interviews. Get Instant, Actionable Feedback from AI.
                     </p>
 
                     <Button asChild className="btn-primary max-sm:w-full">
@@ -36,7 +34,7 @@ const Page = async () => {
                     </Button>
                 </div>
 
-                <Image src="/robot.png" alt="robo-dude" width={400} height={400} className="max-sm:hidden" />
+                <Image src="/customRobot.png" alt="robo-dude" width={400} height={400} className="max-sm:hidden" />
             </section>
 
             <section className="flex flex-col gap-6 mt-8">

@@ -63,13 +63,13 @@ export default function StartInterviewPage() {
 
 
     return (
-        <div className="max-w-xl mx-auto mt-10 card-border">
-            <div className="card p-8">
+        <div className="max-w-xl mx-auto mt10 card-border">
+        <div className="card p-10 ">
                 <h2 className="text-xl mb-4 font-bold">Customize Your Interview</h2>
                 <FormProvider {...methods}>
-                    <form onSubmit={methods.handleSubmit(onSubmit)} className="space-y-4">
+                    <form onSubmit={methods.handleSubmit(onSubmit)} className="space-y-4 ">
                         <FormField name="role" label="Job Role" placeholder="e.g. Frontend Developer" />
-                        <FormField name="type" label="Question Type" placeholder="Technical" />
+                        <FormField name="type" label="Question Type" placeholder="e.g Technical, Behavioural" />
                         <FormField name="level" label="Experience Level" placeholder="e.g. Junior, Senior" />
                         <FormField name="techstack" label="Tech Stack" placeholder="e.g. React, Node.js" />
                         <FormField name="amount" label="Number of Questions" type="number" />

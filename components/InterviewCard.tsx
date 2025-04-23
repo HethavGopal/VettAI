@@ -9,7 +9,10 @@ import DisplayTechIcons from "@/components/displayTechIcons";
 const InterviewCard = ({interviewId, userId, role, type,techstack, createdAt} : InterviewCardProps) => {
     const feedback = null as Feedback | null;
     const normalizedType = /mix/gi.test(type) ? 'Mixed' : type;
-    const formattedDate = dayjs(feedback?.createdAt || createdAt || Date.now()).format('MMM D, YYYY');
+    const formattedDate = dayjs(
+        feedback?.createdAt || (createdAt?.toDate ? createdAt.toDate() : createdAt) || Date.now()
+    ).format('MMM D, YYYY');
+
 
     return (
         <div className="card-border w-[360px] max-sm:w-full min-h-96">
@@ -43,7 +46,7 @@ const InterviewCard = ({interviewId, userId, role, type,techstack, createdAt} : 
                     </p>
                 </div>
                 <div className="flex flex-row justify-between">
-
+                    <DisplayTechIcons techStack={techstack} />
                     <Button className="btn-primary">
                         <Link
                             href={
