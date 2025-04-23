@@ -8,7 +8,11 @@ import DisplayTechIcons from "@/components/displayTechIcons";
 const InterviewCard = ({ id, userId, role, type, techstack, createdAt }: InterviewCardProps) => {
     const feedback = null as Feedback | null;
     const normalizedType = /mix/gi.test(type) ? 'Mixed' : type;
-    const formattedDate = dayjs(feedback?.createdAt || createdAt || Date.now()).format('MMM D, YYYY');
+    const rawDate = feedback?.createdAt || createdAt;
+    const formattedDate = dayjs(
+        rawDate?.toDate ? rawDate.toDate() : rawDate
+    ).format("MMM D, YYYY");
+
 
     return (
         <div className="card-border w-[360px] max-sm:w-full min-h-96">
