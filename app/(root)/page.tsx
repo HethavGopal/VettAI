@@ -2,9 +2,9 @@ import React from 'react'
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import {dummyInterviews} from "@/constants";
 import InterviewCard from "@/components/InterviewCard";
-import {getCurrentUser, getInterviewsByUserId, getLatestInterviews} from "@/lib/actions/auth.action";
+import {getCurrentUser, } from "@/lib/actions/auth.action";
+import {getInterviewsByUserId, getLatestInterviews } from "@/lib/actions/general.action";
 
 const Page = async () => {
     const user = await getCurrentUser();
@@ -17,24 +17,21 @@ const Page = async () => {
     const hasPastInterviews = userInterviews?.length > 0;
     const hasUpcomingInterviews = latestInterviews?.length > 0;
 
-
-
-
     return (
         <>
             <section className="card-cta">
                 <div className="flex flex-col gap-6 max-w-lg">
-                    <h2>Master Interviews with AI-Powered Mock Sessions & Real-Time Feedback</h2>
+                    <h2>Get Interview-Ready with AI-Powered Practice & Feedback</h2>
                     <p className="text-lg">
-                        Practice Real Interviews. Get Instant, Actionable Feedback from AI.
+                        Practice on real interview questions & get instant feedback
                     </p>
 
                     <Button asChild className="btn-primary max-sm:w-full">
-                        <Link href="/interview/start">Start an Interview</Link>
+                        <Link href="/interview">Start an Interview</Link>
                     </Button>
                 </div>
 
-                <Image src="/customRobot.png" alt="robo-dude" width={400} height={400} className="max-sm:hidden" />
+                <Image src="/robot.png" alt="robo-dude" width={400} height={400} className="max-sm:hidden" />
             </section>
 
             <section className="flex flex-col gap-6 mt-8">
