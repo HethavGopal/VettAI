@@ -43,7 +43,7 @@ const InterviewCard = ({interviewId, userId, role, type,techstack, createdAt} : 
                     </p>
                 </div>
                 <div className="flex flex-row justify-between">
-                    <DisplayTechIcons techStack={techstack} />
+
                     <Button className="btn-primary">
                         <Link
                             href={
