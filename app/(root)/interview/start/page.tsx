@@ -64,7 +64,7 @@ export default function StartInterviewPage() {
 
     return (
         <div className="max-w-xl mx-auto mt10 card-border">
-        <div className="card p-10 ">
+            <div className="card p-10 ">
                 <h2 className="text-xl mb-4 font-bold">Customize Your Interview</h2>
                 <FormProvider {...methods}>
                     <form onSubmit={methods.handleSubmit(onSubmit)} className="space-y-4 ">
