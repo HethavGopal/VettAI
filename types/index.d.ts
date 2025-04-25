@@ -39,14 +39,14 @@ interface User {
 }
 
 interface InterviewCardProps {
-  id?: string;
-  interviewId?: string;
-  userId?: string;
+  interviewId: string;
+  userId: string;
   role: string;
   type: string;
   techstack: string[];
-  createdAt: Timestamp | string | Date;
+  createdAt: any; // or Date if already converted
 }
+
 
 interface AgentProps {
   userName: string;
