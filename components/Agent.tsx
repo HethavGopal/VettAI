@@ -152,7 +152,7 @@ const Agent = ({
                         <Image src="/VLogoBlack.svg" alt="vapi" width={65} height={54} className="object-cover" />
                         {isSpeaking && <span className="animate-speak" />}
                     </div>
-                    <h3>AI Interviewer</h3>
+                    <h3>Vera</h3>
                 </div>
 
                 <div className="card-border">
