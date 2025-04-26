@@ -93,11 +93,11 @@ export async function getFeedbackByInterviewId(
 export async function getLatestInterviews(
     params: GetLatestInterviewsParams
 ): Promise<Interview[] | null> {
-    const { userId, limit = 20 } = params;
+    const { userId, limit = 9 } = params;
 
     const interviews = await db
         .collection("interviews")
-        .orderBy("createdAt", "desc")
+        .orderBy("createdAt", "asc")
         .where("finalized", "==", true)
         .where("userId", "!=", userId)
         .limit(limit)
