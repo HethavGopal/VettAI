@@ -1,13 +1,7 @@
 # 🎙️ VettAI – AI-Powered Mock Interview Platform
 
 Built with  
-![Next.js](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js)  
-![Vapi AI](https://img.shields.io/badge/Vapi_AI-9146FF?style=for-the-badge&logo=vercel&logoColor=white)  
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)  
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white)  
-![shadcn/ui](https://img.shields.io/badge/shadcn/ui-000000?style=for-the-badge)  
-![Google Gemini](https://img.shields.io/badge/Google%20Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white)  
-![Zod](https://img.shields.io/badge/Zod-3178C6?style=for-the-badge)
+![Next.js](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js)  ![Vapi AI](https://img.shields.io/badge/Vapi_AI-9146FF?style=for-the-badge&logo=vercel&logoColor=white)  ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)  ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white)  ![shadcn/ui](https://img.shields.io/badge/shadcn/ui-000000?style=for-the-badge)  ![Google Gemini](https://img.shields.io/badge/Google%20Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white)  ![Zod](https://img.shields.io/badge/Zod-3178C6?style=for-the-badge)  ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 
 **VettAI** is a modern web application that helps users practice mock interviews using real-time voice agents powered by **Vapi AI** and **Google Gemini**. The app features a clean, responsive UI and intelligent feedback to enhance your preparation experience.
 
