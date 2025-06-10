@@ -84,7 +84,7 @@ const Hero = () => {
                 Get Started Free →
               </button>
             </Link>
-            <span className="text-white/50 text-sm">No credit card required</span>
+            <span className="text-white/50 text-sm">Instant access. No payment upfront.</span>
           </motion.div>
 
           {/* Border Beam Effects */}

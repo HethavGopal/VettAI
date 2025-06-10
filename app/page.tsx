@@ -5,11 +5,13 @@ import HowItWorks from "@/components/ui/landing/how-it-works";
 import LanguagesCompanies from "@/components/ui/landing/languages-companies";
 import CompaniesHighlight from "@/components/ui/landing/companies-highlight";
 import Testimonials from '@/components/ui/landing/testimonials';
+import LogoStrip from '@/components/ui/landing/logo-strip';
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
       <Hero />
+      <LogoStrip />
       <Testimonials />
       <Stats />
       <HowItWorks />
