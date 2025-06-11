@@ -68,7 +68,7 @@ const companies = [
 
 const LogoStrip = () => {
   return (
-    <section className="relative py-10 bg-black overflow-hidden border-y border-white/5">
+    <section className="relative py-10 bg-black overflow-hidden border-t border-white/5">
       {/* Section header */}
       <div className="text-center mb-5">
         <p className="text-white/50 text-sm font-medium tracking-wider uppercase mb-2">Prepares for interviews at</p>
@@ -101,7 +101,7 @@ const LogoStrip = () => {
       </div>
 
       {/* Bottom section text */}
-      <div className="text-center mt-12">
+      <div className="text-center mt-8 mb-0">
         <p className="text-white/30 text-sm">
           Join thousands of engineers
         </p>

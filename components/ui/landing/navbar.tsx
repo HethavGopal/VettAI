@@ -8,10 +8,10 @@ const NavBar = () => (
   <nav className="sticky top-0 w-full z-50 bg-black/70 backdrop-blur-md border-b border-white/10">
     <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
       <div className="flex items-center gap-8">
-        <div className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
           <Image src="/VLogoWhite.png" alt="VettAI Logo" width={24} height={24} />
           <span className="text-lg font-bold text-white tracking-tight">VettAI</span>
-        </div>
+        </Link>
         
         <div className="hidden md:flex items-center gap-6">
           <div className="group relative">

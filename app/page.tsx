@@ -6,12 +6,16 @@ import LanguagesCompanies from "@/components/ui/landing/languages-companies";
 import CompaniesHighlight from "@/components/ui/landing/companies-highlight";
 import Testimonials from '@/components/ui/landing/testimonials';
 import LogoStrip from '@/components/ui/landing/logo-strip';
+import SuperhumanHero from '@/components/ui/landing/superhuman-hero';
+import PracticeTechnologies from '@/components/ui/landing/practice-technologies';
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
       <Hero />
       <LogoStrip />
+      <SuperhumanHero />
+      <PracticeTechnologies />
       <Testimonials />
       <Stats />
       <HowItWorks />
