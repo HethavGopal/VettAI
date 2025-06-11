@@ -24,7 +24,6 @@ export default async function Home() {
       <LogoStrip />
       <SuperhumanHero />
       <PracticeTechnologies />
-      <Testimonials />
       <HowItWorks />
     </main>
   );

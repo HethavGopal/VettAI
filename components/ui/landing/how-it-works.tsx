@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { UserPlus, Settings, Play, Award, TrendingUp } from 'lucide-react';
 import { useRef, useState, useEffect } from 'react';
+import Link from 'next/link';
 import { AnimatedBeam } from '@/components/magicui/animated-beam';
 
 const steps = [
@@ -314,17 +315,21 @@ const HowItWorks = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-primary-200 to-primary-100 text-white font-semibold rounded-xl hover:from-primary-100 hover:to-primary-200 transition-all duration-300 shadow-lg hover:shadow-primary-200/30 transform hover:scale-105">
-                Start Free Interview
-              </button>
+              <Link href="/sign-up">
+                <button className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-primary-200 to-primary-100 text-white font-semibold rounded-xl hover:from-primary-100 hover:to-primary-200 transition-all duration-300 shadow-lg hover:shadow-primary-200/30 transform hover:scale-105 cursor-pointer">
+                  Start Free Interview
+                </button>
+              </Link>
               
               <div className="flex items-center gap-2 text-white/50 text-sm">
                 <span>or</span>
               </div>
               
-              <button className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
-                Create Account
-              </button>
+              <Link href="/sign-up">
+                <button className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/10 transition-all duration-300 backdrop-blur-sm cursor-pointer">
+                  Create Account
+                </button>
+              </Link>
             </div>
             
             <p className="text-white/40 text-xs sm:text-sm mt-4 sm:mt-6">

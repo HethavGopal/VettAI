@@ -24,16 +24,7 @@ const NavBar = () => {
                 <ChevronDown className="w-3 h-3 opacity-50 group-hover:opacity-100" />
               </button>
             </div>
-            <div className="group relative">
-              <button className="flex items-center gap-1 text-sm text-white/90 hover:text-white">
-                Resources
-                <ChevronDown className="w-3 h-3 opacity-50 group-hover:opacity-100" />
-              </button>
-            </div>
-            <Link href="/pricing" className="text-sm text-white/90 hover:text-white">
-              Pricing
-            </Link>
-            <Link href="/about" className="text-sm text-white/90 hover:text-white">
+            <Link href="/#how-it-works" className="text-sm text-white/90 hover:text-white">
               About
             </Link>
           </div>
@@ -71,14 +62,7 @@ const NavBar = () => {
                 Product
                 <ChevronDown className="w-3 h-3 opacity-50" />
               </button>
-              <button className="flex items-center gap-1 text-sm text-white/90 hover:text-white w-full text-left">
-                Resources
-                <ChevronDown className="w-3 h-3 opacity-50" />
-              </button>
-              <Link href="/pricing" className="block text-sm text-white/90 hover:text-white">
-                Pricing
-              </Link>
-              <Link href="/about" className="block text-sm text-white/90 hover:text-white">
+              <Link href="/#how-it-works" className="block text-sm text-white/90 hover:text-white" onClick={() => setIsMobileMenuOpen(false)}>
                 About
               </Link>
             </div>

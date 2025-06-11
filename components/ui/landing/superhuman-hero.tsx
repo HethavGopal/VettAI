@@ -107,15 +107,15 @@ const SuperhumanHero = () => {
             transition={{ duration: 0.8, delay: 1 }}
             className="pt-3 sm:pt-4 pb-6 sm:pb-8 flex justify-center"
           >
-            <Link href="/get-started">
+            <Link href="/sign-in">
               <ShimmerButton 
-                className="shadow-2xl px-3 sm:px-4 py-2 sm:py-2.5"
+                className="shadow-2xl px-3 sm:px-4 py-2 sm:py-2.5 cursor-pointer"
                 background="rgb(100, 88, 200)"
                 shimmerColor="#ffffff"
                 shimmerSize="0.15em"
                 shimmerDuration="2s"
               >
-                <span className="text-xs sm:text-sm font-medium text-white">
+                <span className="text-xs sm:text-sm font-medium text-white cursor-pointer">
                   Start Your AI Interview →
                 </span>
               </ShimmerButton>
