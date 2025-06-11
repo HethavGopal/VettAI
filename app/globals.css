@@ -265,18 +265,19 @@
   }
 
   .call-view {
-    @apply flex sm:flex-row flex-col gap-10 items-center justify-between w-full;
+    @apply flex sm:flex-row flex-col gap-4 md:gap-6 lg:gap-8 items-stretch justify-between w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16;
+    max-width: 1600px !important;
 
     h3 {
-      @apply text-center text-primary-100 mt-5;
+      @apply text-center text-primary-100 mt-4 sm:mt-5 text-lg sm:text-xl font-semibold;
     }
 
     .card-interviewer {
-      @apply flex-center flex-col gap-2 p-7 h-[400px] grey-gradient-dark  rounded-lg border-2 border-primary-100/50 flex-1 sm:basis-1/2 w-full;
+      @apply flex-center flex-col gap-4 sm:gap-5 p-8 sm:p-10 md:p-12 h-[450px] sm:h-[500px] md:h-[550px] lg:h-[600px] grey-gradient-dark rounded-2xl border-2 border-primary-100/50 w-full sm:w-[calc(50%-12px)] md:w-[calc(50%-16px)] lg:w-[calc(50%-20px)];
     }
 
     .avatar {
-      @apply z-10 flex items-center justify-center grey-gradient rounded-full size-[120px] relative;
+      @apply z-10 flex items-center justify-center grey-gradient rounded-full size-[140px] sm:size-[160px] md:size-[180px] lg:size-[200px] relative;
 
       .animate-speak {
         @apply absolute inline-flex size-5/6 animate-ping rounded-full bg-primary-300 opacity-75;
@@ -284,11 +285,30 @@
     }
 
     .card-border {
-      @apply border-gradient p-0.5 rounded-2xl flex-1 sm:basis-1/2 w-full h-[400px] max-md:hidden;
+      @apply border-gradient p-0.5 rounded-2xl h-[450px] sm:h-[500px] md:h-[550px] lg:h-[600px] max-md:hidden;
+      width: 100% !important;
+    }
+    
+    @media (min-width: 640px) {
+      .card-border {
+        width: calc(50% - 12px) !important;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .card-border {
+        width: calc(50% - 16px) !important;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .card-border {
+        width: calc(50% - 20px) !important;
+      }
     }
 
     .card-content {
-      @apply flex flex-col gap-2 justify-center items-center p-7 dark-gradient rounded-2xl min-h-full;
+      @apply flex flex-col gap-4 sm:gap-5 justify-center items-center p-8 sm:p-10 md:p-12 dark-gradient rounded-2xl min-h-full;
     }
   }
 

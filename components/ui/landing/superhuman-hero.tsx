@@ -12,7 +12,7 @@ const SuperhumanHero = () => {
   return (
     <section className="relative bg-gradient-to-br from-black via-gray-900 to-black">
       {/* Top Section - Headline over large background text */}
-      <div className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+      <div className="relative min-h-[50vh] sm:min-h-[55vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden">
         {/* Large Background Stats */}
         <motion.div 
           className="absolute inset-0 flex items-center justify-center pointer-events-none"
@@ -23,7 +23,7 @@ const SuperhumanHero = () => {
           <div 
             className="font-bold text-white/5 select-none leading-none"
             style={{ 
-              fontSize: 'clamp(8rem, 25vw, 32rem)',
+              fontSize: 'clamp(4rem, 15vw, 16rem)',
               WebkitTextStroke: '1px rgba(255, 255, 255, 0.15)'
             }}
           >
@@ -32,9 +32,9 @@ const SuperhumanHero = () => {
         </motion.div>
 
         {/* Main Headline Only */}
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <motion.h1 
-            className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -53,16 +53,16 @@ const SuperhumanHero = () => {
       </div>
 
       {/* Decorative Line Separator */}
-      <div className="relative flex justify-center py-4">
-        <div className="w-16 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+      <div className="relative flex justify-center py-2 sm:py-3 md:py-4">
+        <div className="w-12 sm:w-14 md:w-16 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
       </div>
 
       {/* Bottom Section - Rest of the content */}
-      <div className="relative py-8">
-        <div className="max-w-4xl mx-auto px-6 text-center space-y-6">
+      <div className="relative py-6 sm:py-8 md:py-10 lg:py-12">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-4 sm:space-y-5 md:space-y-6">
           {/* Subheadline */}
           <motion.h2 
-            className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white px-2"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -72,7 +72,7 @@ const SuperhumanHero = () => {
 
           {/* Description */}
           <motion.p 
-            className="text-base md:text-lg text-white/70 max-w-2xl mx-auto leading-relaxed px-4"
+            className="text-sm sm:text-base md:text-lg text-white/70 max-w-2xl mx-auto leading-relaxed px-4 sm:px-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -82,7 +82,7 @@ const SuperhumanHero = () => {
 
           {/* Problem Statement */}
           <motion.p 
-            className="text-sm md:text-base text-white/60 max-w-2xl mx-auto leading-relaxed px-9"
+            className="text-xs sm:text-sm md:text-base text-white/60 max-w-2xl mx-auto leading-relaxed px-6 sm:px-8 md:px-9"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -92,7 +92,7 @@ const SuperhumanHero = () => {
 
           {/* CTA Text */}
           <motion.p 
-            className="text-xs md:text-sm text-white/50 pt-2"
+            className="text-xs sm:text-sm text-white/50 pt-1 sm:pt-2"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
@@ -105,17 +105,17 @@ const SuperhumanHero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="pt-4 pb-8 flex justify-center"
+            className="pt-3 sm:pt-4 pb-6 sm:pb-8 flex justify-center"
           >
             <Link href="/get-started">
               <ShimmerButton 
-                className="shadow-2xl px-4 py-2"
+                className="shadow-2xl px-3 sm:px-4 py-2 sm:py-2.5"
                 background="rgb(100, 88, 200)"
                 shimmerColor="#ffffff"
                 shimmerSize="0.15em"
                 shimmerDuration="2s"
               >
-                <span className="text-sm font-medium text-white">
+                <span className="text-xs sm:text-sm font-medium text-white">
                   Start Your AI Interview →
                 </span>
               </ShimmerButton>
@@ -124,7 +124,6 @@ const SuperhumanHero = () => {
         </div>
       </div>
 
-      {/* Technologies Section */}
       
 
       {/* Subtle Grid Pattern */}

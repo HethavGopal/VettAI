@@ -145,23 +145,26 @@ const Agent = ({
         vapi.stop();
     };
     return (
-        <>
-            <div className="call-view">
-                <div className="card-interviewer">
-                    <div className="avatar">
-                        <Image src="/VLogoBlack.svg" alt="vapi" width={65} height={54} className="object-cover" />
-                        {isSpeaking && <span className="animate-speak" />}
+        <div className="flex flex-col gap-8 min-h-[calc(100vh-200px)] justify-between pb-8">
+            <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+                <div className="call-view">
+                    <div className="card-interviewer">
+                        <div className="avatar">
+                            <Image src="/VLogoBlack.svg" alt="vapi" width={65} height={54} className="object-cover" />
+                            {isSpeaking && <span className="animate-speak" />}
+                        </div>
+                        <h3>Vera</h3>
                     </div>
-                    <h3>Vera</h3>
-                </div>
 
-                <div className="card-border">
-                    <div className="card-content">
-                        <Image src="/userAvatarNew.svg" alt="user avatar" width={540} height={540} className="rounded-full object-cover size-[120px]" />
-                        <h3>{userName}</h3>
+                    <div className="card-border">
+                        <div className="card-content">
+                            <Image src="/userAvatarNew.svg" alt="user avatar" width={540} height={540} className="rounded-full object-cover size-[120px]" />
+                            <h3>{userName}</h3>
+                        </div>
                     </div>
                 </div>
             </div>
+            
             {messages.length > 0 && (
                 <div className="transcript-border">
                     <div className="transcript">
@@ -172,9 +175,9 @@ const Agent = ({
                 </div>
             )}
 
-            <div className="w-full flex justify-center">
+            <div className="w-full flex justify-center pt-6">
                 {callStatus !== 'ACTIVE' ? (
-                    <button className="relative btn-call" onClick={handleCall}>
+                    <button className="relative btn-call z-10" onClick={handleCall}>
                         <span
                           className={cn(
                               "absolute animate-ping rounded-full opacity-75",
@@ -188,12 +191,12 @@ const Agent = ({
                         </span>
                     </button>
                 ) : (
-                    <button className="btn-disconnect" onClick={handleDisconnect}>
+                    <button className="btn-disconnect z-10" onClick={handleDisconnect}>
                         End
                     </button>
                 )}
             </div>
-        </>
+        </div>
     )
 }
 export default Agent

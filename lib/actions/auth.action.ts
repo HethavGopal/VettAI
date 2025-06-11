@@ -2,8 +2,25 @@
 
 import {db, auth} from "@/firebase/admin";
 import {cookies} from "next/headers";
+import { redirect } from "next/navigation";
 
 const ONE_WEEK = 60 * 60 * 24 * 7;
+
+export async function signOut() {
+    const cookieStore = await cookies();
+    
+    // Clear the session cookie
+    cookieStore.set('session', '', {
+        maxAge: 0,
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        path: '/',
+        sameSite: 'lax'
+    });
+    
+    // Redirect to home page
+    redirect('/');
+}
 
 export async function signUp(params: SignUpParams) {
     const { uid, name, email } = params;

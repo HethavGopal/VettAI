@@ -35,19 +35,19 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="relative py-24 bg-black">
+    <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 bg-black">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-black pointer-events-none" />
       
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-4xl font-bold text-white mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4 px-4"
           >
             Trusted by Top Tech Professionals
           </motion.h2>
@@ -56,14 +56,14 @@ const Testimonials = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-xl text-white/70"
+            className="text-base sm:text-lg md:text-xl text-white/70 px-4"
           >
             See how VettAI has helped engineers land their dream roles
           </motion.p>
         </div>
 
         {/* Testimonials grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.author}
@@ -71,18 +71,18 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition"
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:bg-white/10 transition"
             >
-              <p className="text-lg text-white/90 italic mb-8">
+              <p className="text-sm sm:text-base md:text-lg text-white/90 italic mb-6 sm:mb-8">
                 "{testimonial.quote}"
               </p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary-200/20 flex items-center justify-center">
-                  <span className="text-primary-200 font-semibold">{testimonial.initials}</span>
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary-200/20 flex items-center justify-center flex-shrink-0">
+                  <span className="text-primary-200 font-semibold text-sm sm:text-base">{testimonial.initials}</span>
                 </div>
                 <div>
-                  <div className="font-semibold text-white">{testimonial.author}</div>
-                  <div className="text-white/50">{testimonial.role} at {testimonial.company}</div>
+                  <div className="font-semibold text-white text-sm sm:text-base">{testimonial.author}</div>
+                  <div className="text-white/50 text-xs sm:text-sm">{testimonial.role} at {testimonial.company}</div>
                 </div>
               </div>
             </motion.div>
@@ -95,23 +95,23 @@ const Testimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
+          className="mt-16 sm:mt-20 md:mt-24 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 text-center"
         >
           <div>
-            <div className="text-4xl font-bold text-white mb-2">10,000+</div>
-            <div className="text-white/50">Active Users</div>
+            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">10,000+</div>
+            <div className="text-white/50 text-xs sm:text-sm">Active Users</div>
           </div>
           <div>
-            <div className="text-4xl font-bold text-white mb-2">95%</div>
-            <div className="text-white/50">Success Rate</div>
+            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">95%</div>
+            <div className="text-white/50 text-xs sm:text-sm">Success Rate</div>
           </div>
           <div>
-            <div className="text-4xl font-bold text-white mb-2">50+</div>
-            <div className="text-white/50">Company Questions</div>
+            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">50+</div>
+            <div className="text-white/50 text-xs sm:text-sm">Company Questions</div>
           </div>
           <div>
-            <div className="text-4xl font-bold text-white mb-2">4.9/5</div>
-            <div className="text-white/50">User Rating</div>
+            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">4.9/5</div>
+            <div className="text-white/50 text-xs sm:text-sm">User Rating</div>
           </div>
         </motion.div>
       </div>

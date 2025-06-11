@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+import { isAuthenticated } from "@/lib/actions/auth.action";
 import Hero from "@/components/ui/landing/hero";
 import Features from "@/components/ui/landing/features";
 import Stats from "@/components/ui/landing/stats";
@@ -9,19 +11,21 @@ import LogoStrip from '@/components/ui/landing/logo-strip';
 import SuperhumanHero from '@/components/ui/landing/superhuman-hero';
 import PracticeTechnologies from '@/components/ui/landing/practice-technologies';
 
-export default function Home() {
+export default async function Home() {
+  // Redirect authenticated users to dashboard
+  const isUserAuthenticated = await isAuthenticated();
+  if (isUserAuthenticated) {
+    redirect('/dashboard');
+  }
+
   return (
-    <main className="flex min-h-screen flex-col">
+    <main className="flex min-h-screen flex-col w-full overflow-x-hidden">
       <Hero />
       <LogoStrip />
       <SuperhumanHero />
       <PracticeTechnologies />
       <Testimonials />
-      <Stats />
       <HowItWorks />
-      <Features />
-      <LanguagesCompanies />
-      <CompaniesHighlight />
     </main>
   );
 } 

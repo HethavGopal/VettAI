@@ -109,30 +109,30 @@ const PracticeTechnologies = () => {
   }, []);
 
   return (
-    <section className="relative py-20 bg-black overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6 text-center">
+    <section className="relative py-12 sm:py-16 md:py-20 bg-black overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-16"
+          className="mb-10 sm:mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 px-2">
             Practice with{" "}
             <span className="bg-gradient-to-r from-primary-200 to-primary-100 text-transparent bg-clip-text">
               Real Technologies
             </span>
           </h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/70 max-w-3xl mx-auto px-4">
             Master the technologies that matter. Our AI interviewer adapts to test your knowledge 
             across the most in-demand programming languages, frameworks, and tools.
           </p>
         </motion.div>
 
-        {/* Grid of Tech Icons - 2 rows x 3 columns */}
-        <div className="grid grid-cols-3 grid-rows-2 gap-8 max-w-3xl mx-auto mb-16">
+        {/* Grid of Tech Icons - Responsive grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-xs sm:max-w-lg md:max-w-3xl mx-auto mb-10 sm:mb-12 md:mb-16">
           {displayedIcons.map((tech, index) => {
             const IconComponent = tech.icon;
             
@@ -151,23 +151,23 @@ const PracticeTechnologies = () => {
                   >
                     <div className="group relative">
                       {/* Icon Container */}
-                      <div className="relative flex items-center justify-center w-24 h-24 md:w-28 md:h-28 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-lg hover:shadow-2xl hover:bg-white/10 transition-all duration-300">
+                      <div className="relative flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-lg sm:rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-lg hover:shadow-2xl hover:bg-white/10 transition-all duration-300">
                         <IconComponent
-                          size={40}
+                          size={24}
+                          className="sm:w-8 sm:h-8 md:w-10 md:h-10 transition-all duration-300 group-hover:scale-110"
                           style={{ color: tech.color }}
-                          className="transition-all duration-300 group-hover:scale-110"
                         />
                         
                         {/* Glow effect */}
                         <div
-                          className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-xl"
+                          className="absolute inset-0 rounded-lg sm:rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-xl"
                           style={{ backgroundColor: tech.color }}
                         />
                       </div>
                       
                       {/* Tech name */}
-                      <div className="mt-3">
-                        <span className="text-sm font-medium text-white/60 group-hover:text-white/80 transition-colors duration-300">
+                      <div className="mt-2 sm:mt-3">
+                        <span className="text-xs sm:text-sm font-medium text-white/60 group-hover:text-white/80 transition-colors duration-300">
                           {tech.name}
                         </span>
                       </div>
@@ -185,12 +185,13 @@ const PracticeTechnologies = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
+          className="px-4"
         >
-          <p className="text-white/60 text-lg mb-6">
+          <p className="text-white/60 text-sm sm:text-base md:text-lg mb-4 sm:mb-6">
             From frontend frameworks to backend databases, practice it all
           </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm text-white/50">
-            <span>• Live Coding Sessions</span>
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 text-xs sm:text-sm text-white/50">
+            <span>• Coding Questions</span>
             <span>• System Design Questions</span>
             <span>• Best Practices Review</span>
             <span>• Real-world Scenarios</span>
