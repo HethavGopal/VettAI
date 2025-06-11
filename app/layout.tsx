@@ -11,7 +11,7 @@ const monaSans= Mona_Sans({
 
 
 export const metadata: Metadata = {
-  title: "VeraAI",
+  title: "VettAI",
   description: "AI powered platform for mock interviews",
 };
 
