@@ -31,48 +31,66 @@ const InterviewCard = async ({
 
 
     return (
-        <div className="card-border w-[360px] max-sm:w-full min-h-96">
-            <div className="card-interview">
-                <div>
-                    <div className="absolute top-0 right-0 w-fit px-4 py-2 rounded-bl-lg bg-light-600">
-                        <p className="badge-text">{normalizedType}</p>
-                    </div>
+        <div className="relative w-full max-w-sm mx-auto bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary-200/20">
+            {/* Type Badge */}
+            <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-primary-200/20 border border-primary-200/30">
+                <p className="text-xs font-medium text-primary-200">{normalizedType}</p>
+            </div>
 
-                    <Image src={getRandomInterviewCover()} alt="cover image" width={90} height={90} className="rounded-full object-fit size-[90px]" />
+            {/* Content */}
+            <div className="space-y-4">
+                {/* Header */}
+                <div className="flex flex-col items-center text-center space-y-3">
+                    <Image 
+                        src={getRandomInterviewCover()} 
+                        alt="cover image" 
+                        width={80} 
+                        height={80} 
+                        className="rounded-full object-cover w-16 h-16 sm:w-20 sm:h-20" 
+                    />
 
-                    <h3 className="mt-5 capitalize">
+                    <h3 className="text-lg sm:text-xl font-semibold text-white capitalize leading-tight">
                         {role} Interview
                     </h3>
+                </div>
 
-                    <div className="flex flex-row gap-5 mt-3">
-                        <div className="flex flex-row gap-2">
-                            <Image src="/calendar.svg" alt="calendar" width={22} height={22} />
-                            <p>{formattedDate}</p>
-                        </div>
-
-                        <div className="flex flex-row gap-2 items-center">
-                            <Image src="/star.svg" alt="star" width={22} height={22} />
-                            <p>{feedback?.totalScore || '---'}/100</p>
-                        </div>
+                {/* Stats */}
+                <div className="flex flex-row justify-center gap-4 sm:gap-6">
+                    <div className="flex flex-row gap-2 items-center">
+                        <Image src="/calendar.svg" alt="calendar" width={18} height={18} className="opacity-70" />
+                        <p className="text-sm text-white/70">{formattedDate}</p>
                     </div>
 
-                    <p className="line-clamp-2 mt-5">
-                        {feedback?.finalAssessment || "You haven't taken the interview yet. Take it now to improve your skills."}
-                    </p>
+                    <div className="flex flex-row gap-2 items-center">
+                        <Image src="/star.svg" alt="star" width={18} height={18} className="opacity-70" />
+                        <p className="text-sm font-medium text-white">
+                            {feedback?.totalScore || '---'}/100
+                        </p>
+                    </div>
                 </div>
 
-                <div className="flex flex-row justify-between">
-                    <DisplayTechIcons techStack={techstack} />
+                {/* Description */}
+                <p className="text-sm text-white/60 line-clamp-3 text-center leading-relaxed min-h-[60px]">
+                    {feedback?.finalAssessment || "You haven't taken the interview yet. Take it now to improve your skills."}
+                </p>
 
-                    <Button className="btn-primary">
-                        <Link href={feedback
+                {/* Tech Stack */}
+                <div className="flex justify-center">
+                    <DisplayTechIcons techStack={techstack} />
+                </div>
+
+                {/* Action Button */}
+                <Button className="w-full bg-primary-200 text-black hover:bg-primary-100 font-medium py-2.5 rounded-lg transition-colors">
+                    <Link 
+                        href={feedback
                             ? `/interview/${interviewId}/feedback`
                             : `/interview/${interviewId}`
-                        }>
-                            {feedback ? 'Check Feedback' : 'View Interview'}
-                        </Link>
-                    </Button>
-                </div>
+                        }
+                        className="w-full flex justify-center"
+                    >
+                        {feedback ? 'Check Feedback' : 'Start Interview'}
+                    </Link>
+                </Button>
             </div>
         </div>
     )

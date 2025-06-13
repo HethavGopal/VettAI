@@ -11,7 +11,10 @@ export default function ConditionalNavBar() {
                            pathname?.startsWith('/interview') || 
                            pathname?.startsWith('/interviews') || 
                            pathname?.startsWith('/progress') ||
-                           pathname?.startsWith('/settings');
+                           pathname?.startsWith('/settings') ||
+                           pathname?.startsWith('/help') ||
+                           pathname?.startsWith('/privacy') ||
+                           pathname?.startsWith('/terms');
   
   // Don't render the landing navbar if we're on a dashboard route
   if (shouldHideNavbar) {
