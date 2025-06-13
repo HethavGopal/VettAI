@@ -18,6 +18,11 @@ export async function POST(req: Request) {
             return NextResponse.json({ error: "Missing fields" }, { status: 400 });
         }
 
+        // Validate Google API key
+        if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
+            console.error("Missing GOOGLE_GENERATIVE_AI_API_KEY");
+            return NextResponse.json({ error: "Server configuration error" }, { status: 500 });
+        }
 
         const { text: questionsText } = await generateText({
             model: google("gemini-2.0-flash-001"),
@@ -48,7 +53,7 @@ Thank you! <3`,
             role,
             type,
             level,
-            techstack: techstack.split(",").map((t) => t.trim()),
+            techstack: techstack.split(",").map((t: string) => t.trim()),
             amount,
             questions: parsedQuestions,
             finalized: true,
