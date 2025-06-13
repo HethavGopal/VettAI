@@ -11,10 +11,18 @@ export async function GET() {
 
 export async function POST(req: Request) {
     try {
+        // Log environment variables (without sensitive values)
+        console.log("Environment check:", {
+            hasFirebaseConfig: !!process.env.FIREBASE_PROJECT_ID,
+            hasGoogleKey: !!process.env.GOOGLE_GENERATIVE_AI_API_KEY,
+            hasVapiToken: !!process.env.NEXT_PUBLIC_VAPI_WEB_TOKEN,
+        });
+
         const body = await req.json();
         const { userId, role, type, level, techstack, amount } = body;
 
         if (!userId || !role || !type || !level || !techstack || !amount) {
+            console.error("Missing required fields:", { userId, role, type, level, techstack, amount });
             return NextResponse.json({ error: "Missing fields" }, { status: 400 });
         }
 
@@ -24,9 +32,10 @@ export async function POST(req: Request) {
             return NextResponse.json({ error: "Server configuration error" }, { status: 500 });
         }
 
-        const { text: questionsText } = await generateText({
-            model: google("gemini-2.0-flash-001"),
-            prompt: `Prepare questions for a job interview.
+        try {
+            const { text: questionsText } = await generateText({
+                model: google("gemini-2.0-flash-001"),
+                prompt: `Prepare questions for a job interview.
 The job role is ${role}.
 The job experience level is ${level}.
 The tech stack used in the job is: ${techstack}.
@@ -38,32 +47,40 @@ Return the questions formatted like this:
 ["Question 1", "Question 2", "Question 3"]
 
 Thank you! <3`,
-        });
+            });
 
-        let parsedQuestions: string[] = [];
-        try {
-            parsedQuestions = JSON.parse(questionsText);
-        } catch (err) {
-            console.error("Failed to parse questions from Gemini:", questionsText);
-            parsedQuestions = []; // fallback to empty array if parsing fails
+            let parsedQuestions: string[] = [];
+            try {
+                parsedQuestions = JSON.parse(questionsText);
+            } catch (err) {
+                console.error("Failed to parse questions from Gemini:", questionsText);
+                parsedQuestions = []; // fallback to empty array if parsing fails
+            }
+
+            const interviewData = {
+                userId,
+                role,
+                type,
+                level,
+                techstack: techstack.split(",").map((t: string) => t.trim()),
+                amount,
+                questions: parsedQuestions,
+                finalized: true,
+                coverImage: getRandomInterviewCover(),
+                createdAt: Timestamp.now(),
+            };
+
+            try {
+                await db.collection("interviews").add(interviewData);
+                return NextResponse.json({ success: true });
+            } catch (dbError) {
+                console.error("Database error:", dbError);
+                return NextResponse.json({ error: "Database error" }, { status: 500 });
+            }
+        } catch (aiError) {
+            console.error("AI generation error:", aiError);
+            return NextResponse.json({ error: "AI generation error" }, { status: 500 });
         }
-
-        const interviewData = {
-            userId,
-            role,
-            type,
-            level,
-            techstack: techstack.split(",").map((t: string) => t.trim()),
-            amount,
-            questions: parsedQuestions,
-            finalized: true,
-            coverImage: getRandomInterviewCover(),
-            createdAt: Timestamp.now(),
-        };
-
-        await db.collection("interviews").add(interviewData);
-
-        return NextResponse.json({ success: true });
     } catch (err) {
         console.error("Error creating interview:", err);
         return NextResponse.json({ error: "Server error" }, { status: 500 });
